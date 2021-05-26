@@ -3,4 +3,4 @@ The notebooks were created using Pluto.jl and Jupyter. The source files can be f
 
 # Solving ODEs
 
-- [Euler method](/docs/EulerMethod.html)
+- [Euler method](/docs/SolvingODEs/EulerMethod/EulerMethod.html)
