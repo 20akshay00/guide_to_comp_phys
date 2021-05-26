@@ -123,6 +123,16 @@ md"""!!! tip "Taylor expansions"
 
 """
 
+# ╔═╡ e3a0f46f-fba7-496b-bf08-a847958427d6
+md"""
+
+---
+## Implementation
+Check out these links to find language-specific implementations of the euler method. 
+- [Julia](EulerMethod_Julia.html) version
+- [Python](EulerMethod_Python.html) version
+"""
+
 # ╔═╡ 32186aa5-2128-4713-ba0d-a4d6e238cfba
 TableOfContents()
 
@@ -149,6 +159,7 @@ main {
 # ╟─7c6b7839-a4bb-491c-8813-dd6049dbe796
 # ╟─5a3908a7-573a-4eac-ae44-63b6f5539456
 # ╟─ace793b9-2dfd-4540-9980-0ff1a3a451b8
+# ╟─e3a0f46f-fba7-496b-bf08-a847958427d6
 # ╟─d82d7324-62e2-4b72-ac67-cabd6b9a5f49
 # ╟─32186aa5-2128-4713-ba0d-a4d6e238cfba
 # ╟─b032b264-0b4b-4ac3-9c53-631f5c0c02fd
