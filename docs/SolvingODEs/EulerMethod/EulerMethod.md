@@ -72,8 +72,10 @@ So, globally the error accumulated is $\mathcal{O}(\Delta t)$.
 ---
 ## Implementation
 Check out these links to find language-specific implementations of the euler method. 
-- [Julia](EulerMethod_Julia.html) version
-- [Python](EulerMethod_Python.html) version
+
+<button class="button buttonCustom">[Julia](EulerMethod_Julia.html)</button>$\hspace{1cm}$<button class="button buttonCustom">[Python](EulerMethod_Python.html)</button>
+
+
 
 ---
 
