@@ -10,16 +10,33 @@ using PlutoUI, Plots
 # ╔═╡ 87739896-500e-4f20-85b9-661e13638115
 begin 
 	import DarkMode
-	DarkMode.enable(theme="lucario")
+	DarkMode.enable(theme="oceanic-next")
 end
+
+##oceanic-next
 
 # ╔═╡ 7e878d26-8eef-4262-a904-e532e57e62a8
 html"""
 
 <style>
 
+body{
+	background:rgb(54, 59, 64);
+}
+
 pluto-output{
-	background:rgb(38, 38, 38);
+	background:rgb(54, 59, 64);
+	color:rgb(184, 191, 198);
+}
+
+
+pluto-output h1,
+pluto-output h2,
+pluto-output h3,
+pluto-output h4,
+pluto-output h5,
+pluto-output h6 {
+	color:rgb(222, 222, 222);
 }
 
 pluto-output div.admonition {
@@ -36,11 +53,11 @@ pluto-output div.admonition.info .admonition-title {
 }
 
 pluto-output.rich_output code{
-    background: rgb(30, 30, 30);
+    background: rgb(50, 50, 50);
 }
 
 pluto-output hr{
-	border-top: 3px solid rgb(20, 20, 20);
+	border-top: 3px solid rgb(71, 77, 84);
 }
 </style>
 
@@ -134,8 +151,20 @@ let
 	span = (0.1, 1.0)
 	solution, t = forwardEuler(f, x0, span, 1e-2)
 	
-	plot(t, solution, label = "Interpolated solution", legend = :topleft, lw = 2, color = :black, background_color = RGB(0.20))
-	scatter!(t, solution, label = "Euler method points", legend = :topleft, lw = 2, color = :white, markersize = 2.25, markerstrokecolor = RGB(0.1))
+	plot(t, solution, 
+		label = "Interpolated solution", 
+		legend = :topleft, 
+		lw = 2, 
+		color = :black, 
+		background_color = RGB(0.20))
+	
+	scatter!(t, solution, 
+			label = "Euler method points", 
+			legend = :topleft, 
+			lw = 2, 
+			color = :white, 
+			markersize = 2.25, 
+			markerstrokecolor = RGB(0.1))
 end
 
 # ╔═╡ 7ebef684-108b-4faf-9b39-19c5576e528e
@@ -158,8 +187,19 @@ let
 	span = (0.1, 1.0)
 	solution, t = forwardEuler(f, x0, span, 1e-2)
 	
-	plot(t, solution, label = "Interpolated solution", lw = 2, color = :black, background_color = RGB(0.20) )
-	scatter!(t, solution, label = "Euler method points", legend = :topright, lw = 2, color = :white, markersize = 2.25, markerstrokecolor = RGB(0.1))
+	plot(t, solution, 
+		label = "Interpolated solution", 
+		lw = 2, 
+		color = :black, 
+		background_color = RGB(0.20))
+	
+	scatter!(t, solution, 
+			label = "Euler method points", 
+			legend = :topright, 
+			lw = 2, 
+			color = :white, 
+			markersize = 2.25, 
+			markerstrokecolor = RGB(0.1))
 end
 
 # ╔═╡ a498094e-16c9-4dc2-97af-5fee1bc44a18
@@ -200,8 +240,20 @@ let
 	x0 = 1
 	span = (0, 11)
 	solution, t = forwardEuler(logistic, x0, span, 1e-1)
-	plot(t, solution, label = "Interpolated solution", legend = :top, lw = 2, color = :black, background_color = RGB(0.20))
-	scatter!(t, solution, label = "Euler method points", legend = :top, lw = 2, color = :white, markersize = 2.25, markerstrokecolor = RGB(0.1))
+	
+	plot(t, solution, 
+		label = "Interpolated solution", 
+		legend = :top, 
+		lw = 2, 
+		color = :black, 
+		background_color = RGB(0.20))
+	
+	scatter!(t, solution, 
+			label = "Euler method points", 
+			legend = :top, lw = 2, 
+			color = :white, 
+			markersize = 2.25, 
+			markerstrokecolor = RGB(0.1))
 end
 
 # ╔═╡ bd331fdf-9606-445b-9533-83a48b81cbb3
