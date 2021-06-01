@@ -1,11 +1,51 @@
 ### A Pluto.jl notebook ###
-# v0.14.4
+# v0.14.7
 
 using Markdown
 using InteractiveUtils
 
 # ╔═╡ 7141c6f9-25a9-4253-bae6-d194e48e1e7d
 using PlutoUI, Plots
+
+# ╔═╡ 87739896-500e-4f20-85b9-661e13638115
+begin 
+	import DarkMode
+	DarkMode.enable(theme="lucario")
+end
+
+# ╔═╡ 7e878d26-8eef-4262-a904-e532e57e62a8
+html"""
+
+<style>
+
+pluto-output{
+	background:rgb(38, 38, 38);
+}
+
+pluto-output div.admonition {
+    background: red;
+}
+
+pluto-output div.admonition.info{
+	background: rgb(60, 60, 60);
+ 	border: 5px solid rgb(25, 25, 25);
+}
+
+pluto-output div.admonition.info .admonition-title {
+    background: rgb(25, 25, 25);
+}
+
+pluto-output.rich_output code{
+    background: rgb(30, 30, 30);
+}
+
+pluto-output hr{
+	border-top: 3px solid rgb(20, 20, 20);
+}
+</style>
+
+
+"""
 
 # ╔═╡ b19ec43d-b84e-4f6d-8aa7-5595dcb835a7
 md"""
@@ -56,14 +96,16 @@ md"""!!! info "Input parameters"
 	
 	`span` : this is the span of the domain $[t_i, t_f]$ over which we wish to integrate the equation.
 	
-	`dt` : this is the step size, more often than not, $10^{-3}$ works well enough. But lower the step size, higher the accuracy!
+	`dt` : this is the step size. Lower the step size, higher the accuracy!
 """
 
 # ╔═╡ c01147de-1f99-4674-b856-f8b8e1865256
 md"""
-### Examples
 
 ---
+
+### Examples
+
 
 """
 
@@ -92,8 +134,8 @@ let
 	span = (0.1, 1.0)
 	solution, t = forwardEuler(f, x0, span, 1e-2)
 	
-	plot(t, solution, label = "Interpolated solution", legend = :topleft, lw = 2, color = :blue)
-	scatter!(t, solution, label = "Euler method points", legend = :topleft, lw = 2, color = :red, markersize = 3)
+	plot(t, solution, label = "Interpolated solution", legend = :topleft, lw = 2, color = :black, background_color = RGB(0.20))
+	scatter!(t, solution, label = "Euler method points", legend = :topleft, lw = 2, color = :white, markersize = 2.25, markerstrokecolor = RGB(0.1))
 end
 
 # ╔═╡ 7ebef684-108b-4faf-9b39-19c5576e528e
@@ -116,8 +158,8 @@ let
 	span = (0.1, 1.0)
 	solution, t = forwardEuler(f, x0, span, 1e-2)
 	
-	plot(t, solution, label = "Interpolated solution", legend = :topleft, lw = 2, color = :blue)
-	scatter!(t, solution, label = "Euler method points", legend = :topleft, lw = 2, color = :red, markersize = 3)
+	plot(t, solution, label = "Interpolated solution", lw = 2, color = :black, background_color = RGB(0.20) )
+	scatter!(t, solution, label = "Euler method points", legend = :topright, lw = 2, color = :white, markersize = 2.25, markerstrokecolor = RGB(0.1))
 end
 
 # ╔═╡ a498094e-16c9-4dc2-97af-5fee1bc44a18
@@ -158,13 +200,20 @@ let
 	x0 = 1
 	span = (0, 11)
 	solution, t = forwardEuler(logistic, x0, span, 1e-1)
-	plot(t, solution, label = "Interpolated solution", legend = :top, lw = 2, color = :blue)
-	scatter!(t, solution, label = "Euler method points", legend = :top, lw = 2, color = :red, markersize = 3)
+	plot(t, solution, label = "Interpolated solution", legend = :top, lw = 2, color = :black, background_color = RGB(0.20))
+	scatter!(t, solution, label = "Euler method points", legend = :top, lw = 2, color = :white, markersize = 2.25, markerstrokecolor = RGB(0.1))
 end
 
 # ╔═╡ bd331fdf-9606-445b-9533-83a48b81cbb3
 md"""
 We can now play around with the parameter values and initial conditions to study the behaviour of this differential equation.
+"""
+
+# ╔═╡ 3aab5480-32e8-4f7b-8bcb-4df2f0935bc3
+md"""
+
+---
+
 """
 
 # ╔═╡ 74ab82e0-bdea-11eb-2998-793ccc59b7a5
@@ -182,6 +231,8 @@ pluto-helpbox {
 </style>"
 
 # ╔═╡ Cell order:
+# ╟─87739896-500e-4f20-85b9-661e13638115
+# ╟─7e878d26-8eef-4262-a904-e532e57e62a8
 # ╠═7141c6f9-25a9-4253-bae6-d194e48e1e7d
 # ╟─b19ec43d-b84e-4f6d-8aa7-5595dcb835a7
 # ╟─9d0a01f0-e9f9-491e-8bfe-a34c6ac91113
@@ -201,4 +252,5 @@ pluto-helpbox {
 # ╟─121a761e-c5bc-4e6f-82b1-8a8499f57ee0
 # ╠═8da33672-5d94-41d5-a370-3414d8cb9ed7
 # ╟─bd331fdf-9606-445b-9533-83a48b81cbb3
+# ╟─3aab5480-32e8-4f7b-8bcb-4df2f0935bc3
 # ╟─74ab82e0-bdea-11eb-2998-793ccc59b7a5
