@@ -59,6 +59,11 @@ pluto-output.rich_output code{
 pluto-output hr{
 	border-top: 3px solid rgb(71, 77, 84);
 }
+
+pluto-input.CodeMirror {
+	padding-bottom: 20px;
+}
+
 </style>
 
 
