@@ -13,8 +13,6 @@ begin
 	DarkMode.enable(theme="oceanic-next")
 end
 
-##oceanic-next
-
 # ╔═╡ 7e878d26-8eef-4262-a904-e532e57e62a8
 html"""
 
